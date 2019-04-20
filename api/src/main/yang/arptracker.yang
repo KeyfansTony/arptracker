@@ -1,0 +1,28 @@
+module arptracker {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:arptracker";
+    prefix "arptracker";
+
+    revision "2015-01-05" {
+        description "Initial revision of arptracker model";
+    }
+    import ietf-inet-types {
+    	prefix inet;
+    	revision-date 2013-07-15;
+  	}
+    rpc arp-tracker{
+        input {
+            leaf-list ip-list {
+                type inet:ip-address ;
+            }
+            leaf srcIp {
+                type inet:ip-address ;
+            }
+        }
+        output {
+            leaf success {
+                type boolean;
+            }
+        }
+    }
+}

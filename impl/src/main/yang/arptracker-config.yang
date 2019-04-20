@@ -1,0 +1,22 @@
+module arptracker-config {
+    yang-version 1;
+    namespace "urn:opendaylight:packet:arptracker-config";
+    prefix "arptracker-config";
+
+    revision 2014-05-28 {
+        description "Initial revision.";
+    }
+
+ 	import ietf-yang-types {
+    	prefix yang;
+    	revision-date 2013-07-15;
+  	}
+
+    container arptracker-config {
+        leaf arptracker-mac {
+           	type yang:mac-address;
+        	description "MAC address";
+        	default 00:00:00:00:00:01;
+        }
+    }
+}
